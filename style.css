@@ -1,228 +1,217 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;700&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#050505;color:#eee;min-height:100%}
+body{font-family:Georgia,"Times New Roman",serif}
+a{color:inherit;text-decoration:none}
 
 :root{
-  --red:#a72b20;
-  --dark:#161514;
-  --cream:#eee3ca;
-  --paper:#f5ecd8;
-  --ink:#191715;
-  --muted:#776d60;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--dark);color:var(--ink);font-family:"Roboto Slab",serif}
-a{color:inherit;text-decoration:none}
-.site-shell{display:flex;min-height:100vh}
-.sidebar{position:fixed;left:0;top:0;bottom:0;width:118px;background:var(--dark);color:#f2e6ce;display:flex;flex-direction:column;z-index:10}
-.brand-mark{height:112px;background:var(--red);display:grid;place-items:center;font:54px/1 "Oswald",sans-serif;color:var(--cream)}
-.brand{padding:20px 18px;font:600 14px/1.35 "Oswald",sans-serif;letter-spacing:1px}
-.sidebar nav{margin-top:20px;border-top:1px solid #3d3934}
-.sidebar nav a{display:block;padding:17px 12px;border-bottom:1px solid #3d3934;font:600 11px "Oswald",sans-serif;letter-spacing:.7px}
-.sidebar nav a:hover,.sidebar nav a.active{background:var(--red)}
-.sidebar-bottom{margin-top:auto;background:var(--red);padding:22px 16px;font:600 11px/1.45 "Oswald",sans-serif;letter-spacing:.7px}
-.home-main,.note-page{margin-left:118px;width:calc(100% - 118px)}
-.intro{min-height:100vh;display:grid;grid-template-columns:46% 54%;background:var(--paper)}
-.intro-copy{padding:24vh 7vw 12vh 7vw;align-self:end}
-.eyebrow,.section-heading,.hero-title span{font:600 14px "Oswald",sans-serif;letter-spacing:2px;color:var(--red)}
-.intro h1{font:700 clamp(58px,8vw,130px)/.87 "Oswald",sans-serif;margin:22px 0 30px;letter-spacing:-2px}
-.intro h1 em{font-style:normal;color:var(--red)}
-.intro p{max-width:600px;font-size:18px;line-height:1.7}
-.intro-photo{min-height:100vh;overflow:hidden}
-.intro-photo img{width:100%;height:100%;object-fit:cover;filter:contrast(1.08)}
-.notes-section{background:var(--paper);padding:80px 7vw}
-.section-heading{display:flex;justify-content:space-between;border-bottom:2px solid var(--red);padding-bottom:10px;margin-bottom:25px}
-.section-heading i{font-style:normal;font-size:24px}
-.note-card{display:grid;grid-template-columns:120px 54px 1fr;align-items:center;border-bottom:1px solid #b8ac94;padding:18px 0;gap:18px;transition:.2s}
-.note-card:hover{background:#e7dcc4}
-.card-image{width:120px;height:120px;overflow:hidden}
-.card-image img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.08)}
-.card-number{font:600 24px "Oswald",sans-serif;color:var(--red)}
-.card-text h2{font:700 clamp(20px,2.2vw,34px)/1.05 "Oswald",sans-serif;margin:0 0 12px;text-transform:uppercase}
-.card-text span{font:600 11px "Oswald",sans-serif;letter-spacing:1.4px;color:var(--red)}
-.quote{margin:0;background:var(--red);color:var(--cream);padding:55px 10vw}
-.quote span{font:100px/0 "Roboto Slab",serif}
-.quote p{font:700 clamp(24px,3vw,42px)/1.2 "Oswald",sans-serif;max-width:950px;margin:20px 0}
-.quote small{font:600 12px "Oswald",sans-serif;letter-spacing:2px}
-footer{background:var(--dark);color:#eee3ca;padding:25px 7vw;font:600 12px "Oswald",sans-serif;letter-spacing:1px}
-footer span{float:right;color:#9e9589;font-weight:400}
-.note-hero{height:62vh;position:relative;overflow:hidden}
-.note-hero img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.18)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.05))}
-.hero-title{position:absolute;left:7vw;bottom:8vh;color:#f4ead4;max-width:850px}
-.hero-title h1{font:700 clamp(48px,6vw,90px)/.95 "Oswald",sans-serif;text-transform:uppercase;margin:18px 0 0;letter-spacing:-1px}
-.content{background:var(--paper);padding:70px max(7vw,24px) 100px;max-width:1200px}
-.content h1{font:700 44px/1 "Oswald",sans-serif;color:var(--red);margin-top:0}
-.content h2{font:700 32px/1.05 "Oswald",sans-serif;margin-top:55px;text-transform:uppercase}
-.content h3{font:700 23px/1.1 "Oswald",sans-serif}
-.content p,.content li{font-size:18px;line-height:1.75}
-.content strong{font-weight:700}
-.content mark{background:#d7bd82;padding:0 3px}
-.content blockquote{margin:30px 0;padding:20px 28px;border-left:7px solid var(--red);background:#e7dcc4;font-size:21px}
-.content hr{border:0;border-top:2px solid #b8ac94;margin:45px 0}
-.content ul,.content ol{padding-left:30px}
-@media(max-width:800px){
-  .sidebar{width:76px}
-  .brand{display:none}
-  .sidebar-bottom{font-size:9px;padding:12px 8px}
-  .home-main,.note-page{margin-left:76px;width:calc(100% - 76px)}
-  .intro{display:block}
-  .intro-copy{padding:70px 28px}
-  .intro-photo{min-height:55vh}
-  .notes-section{padding:55px 28px}
-  .note-card{grid-template-columns:75px 35px 1fr;gap:10px}
-  .card-image{width:75px;height:75px}
-  .card-text h2{font-size:20px}
-  .note-hero{height:55vh}
-  .hero-title{left:28px;right:20px;bottom:40px}
-  .content{padding:45px 28px 70px}
-  .content p,.content li{font-size:16px}
-  footer span{float:none;display:block;margin-top:8px}
+  --red:#e01b14;
+  --white:#eeeae1;
+  --black:#050505;
+  --panel:rgba(0,0,0,.70);
+  --line:rgba(255,255,255,.42);
 }
 
+/* LEFT NAVIGATION */
+.rail{
+  position:fixed;z-index:50;left:0;top:0;bottom:0;
+  width:82px;background:#020202;
+  border-right:1px solid rgba(255,255,255,.12);
+}
+.star{
+  color:var(--red);
+  font:38px/1 Georgia,"Times New Roman",serif;
+  text-align:center;padding-top:10px;
+}
+.rail nav{
+  position:absolute;left:0;right:0;top:216px;
+}
+.rail nav a{
+  display:block;width:100%;padding:4px 7px 5px 10px;
+  font:14px/1.1 Georgia,"Times New Roman",serif;
+  white-space:nowrap;
+}
+.rail nav a.active{color:var(--red)}
+.rail nav a.active:after{
+  content:"";display:block;width:58px;
+  border-bottom:1px solid var(--red);margin-top:6px;
+}
+.rail nav a:not(.active){color:var(--white)}
+.rail nav a:hover{color:var(--red)}
 
-/* --- Homepage: architectural editorial layout --- */
-.home-main{
-  position:relative;
-  min-height:100vh;
-  overflow:hidden;
-  background:#0d0d0d;
+.background,.note-background{
+  position:fixed;z-index:0;inset:0;overflow:hidden;
 }
-.home-photo{
-  position:fixed;
-  inset:0;
-  z-index:0;
+.background img,.note-background img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;filter:brightness(.72) contrast(1.08);
 }
-.home-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  filter:contrast(1.06) saturate(.78);
+.darkness,.note-darkness{
+  position:fixed;z-index:1;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.56) 38%,rgba(0,0,0,.10) 100%);
 }
-.home-shade{
-  position:fixed;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.88) 0,rgba(0,0,0,.63) 24%,rgba(0,0,0,.16) 53%,rgba(0,0,0,.03) 100%),
-    linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.05) 42%,rgba(0,0,0,.38));
-}
-.home-overlay{
-  position:relative;
-  z-index:2;
-  width:min(480px,calc(100vw - 120px));
-  min-height:100vh;
-  padding:34px 28px 90px;
-  color:#f0e7d4;
-  background:rgba(8,8,8,.58);
-  border-left:1px solid rgba(240,231,212,.18);
-}
-.home-heading{
-  margin-top:0;
-}
-.home-kicker{
-  font:600 14px/1 "Roboto Slab",serif;
-  letter-spacing:.3px;
-}
-.home-rule{
-  height:1px;
-  background:#ddd0b7;
-  opacity:.9;
-  margin:8px 0 14px;
-}
-.home-heading h1{
-  margin:0;
-  font:400 clamp(38px,4.4vw,62px)/.9 "Roboto Slab",serif;
-  letter-spacing:-2px;
-}
-.home-heading h1 em{
-  font-style:normal;
-  color:var(--red);
-}
-.home-description{
-  max-width:390px;
-  margin-top:30px;
-}
-.home-description p{
-  font:400 14px/1.65 "Roboto Slab",serif;
-  color:#ddd2bf;
-}
-.home .notes-section{
-  margin-top:56px;
-  padding:0;
-  background:transparent;
-}
-.home .section-heading{
-  color:#eee3ca;
-  border-bottom:1px solid rgba(238,227,202,.5);
-  margin-bottom:12px;
-}
-.home .section-heading i{
-  color:var(--red);
-}
-.home .note-card{
-  grid-template-columns:36px 1fr;
-  border-bottom:1px solid rgba(238,227,202,.2);
-  padding:12px 0;
-  gap:12px;
-  color:#eee3ca;
-  background:transparent;
-}
-.home .note-card .card-image{display:none}
-.home .card-number{
-  font:400 14px/1 "Roboto Slab",serif;
-  color:#eee3ca;
-  padding-top:3px;
-}
-.home .card-text h2{
-  font:500 17px/1.05 "Roboto Slab",serif;
-  margin:0 0 5px;
-  text-transform:uppercase;
-}
-.home .card-text span{
-  font-size:9px;
-  color:#c9bda8;
-}
-.home .note-card:hover{
-  background:rgba(167,43,32,.18);
-}
-.home .quote{
-  margin-top:45px;
-  padding:22px 20px;
-  background:rgba(167,43,32,.88);
-}
-.home .quote span{font-size:60px}
-.home .quote p{font-size:18px;margin:10px 0}
-.home footer{
-  position:relative;
-  z-index:3;
+
+/* FULL-WIDTH TOP BAND */
+.home-header,.note-header{
+  position:relative;z-index:4;
   margin-left:0;
-  background:rgba(8,8,8,.92);
-  padding:15px 28px;
+  width:100%;
+  min-height:178px;
+  padding:9px 22px 18px 24px;
+  background:rgba(0,0,0,.70);
+  border-bottom:1px solid rgba(255,255,255,.20);
 }
-.home footer span{display:none}
+.home-header .kicker,.note-header .kicker{
+  font:700 14px/1 Georgia,"Times New Roman",serif;
+}
+.line{
+  height:1px;background:var(--line);
+  margin:5px 0 9px;
+  width:100%;
+}
+.home-header h1{
+  margin:0;
+  font:400 clamp(38px,4.4vw,62px)/.84 Georgia,"Times New Roman",serif;
+  letter-spacing:-1.5px;
+}
+.home-header h1 span{color:var(--red)}
 
+.home{
+  position:relative;z-index:2;
+  margin-left:82px;min-height:100vh;overflow:hidden;
+}
+.home .intro{
+  position:absolute;z-index:5;right:5.2%;top:25px;
+  width:315px;
+  font:700 13px/1.35 Georgia,"Times New Roman",serif;
+}
+.home .notes{display:none}
+.little-poster{
+  position:absolute;z-index:5;
+  left:104px;bottom:48px;
+  width:112px;height:auto;
+  max-height:170px;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+}
+
+/* DEDICATED NOTE LIST */
+.notes-list{
+  position:relative;z-index:2;
+  margin-left:82px;min-height:100vh;overflow:hidden;
+}
+.notes-list .notes-list-label{
+  position:relative;z-index:5;
+  width:720px;max-width:calc(100vw - 120px);
+  margin:42px 0 0 24px;
+  padding:8px 12px;
+  background:var(--panel);
+  border-top:1px solid rgba(255,255,255,.22);
+  border-bottom:1px solid rgba(255,255,255,.22);
+  font:700 14px/1 Georgia,"Times New Roman",serif;
+}
+.notes-list .notes{
+  position:relative;z-index:5;
+  display:block;
+  width:720px;max-width:calc(100vw - 120px);
+  margin:0 0 60px 24px;
+  padding:0 12px 8px;
+  background:var(--panel);
+}
+.note-row{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr) 42px;
+  align-items:center;
+  min-height:68px;
+  border-bottom:1px solid rgba(255,255,255,.20);
+  padding:8px 2px;
+}
+.note-row:hover{background:rgba(255,255,255,.035)}
+.num{color:var(--red);font:400 23px/1 Georgia,serif}
+.note-title{font:700 14px/1.3 Georgia,"Times New Roman",serif}
+.arrow{font:24px/1;text-align:center}
+
+/* NOTE PAGE */
+.note-page{
+  position:relative;z-index:2;
+  margin-left:82px;min-height:100vh;
+  overflow:hidden;
+}
+.note-background{height:100vh;will-change:transform}
+.note-background img{
+  height:120vh;
+  min-height:100vh;
+  position:absolute;left:0;top:-10vh;
+  filter:grayscale(100%) brightness(.58) contrast(1.14);
+}
+.note-darkness{
+  background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.47) 50%,rgba(0,0,0,.18));
+}
+.note-header{
+  min-height:150px;
+  width:100%;
+  padding:9px 24px 16px;
+}
+.note-heading{
+  display:flex;align-items:flex-start;gap:14px;
+}
+.note-number{color:var(--red);font:400 23px/1 Georgia,serif;padding-top:5px}
+.note-heading h1{
+  margin:0;max-width:900px;
+  font:400 clamp(29px,3.2vw,47px)/.88 Georgia,"Times New Roman",serif;
+}
+.back{
+  position:relative;z-index:6;
+  display:block;width:44px;margin:16px 0 0 18px;
+  font:30px/1 Georgia,serif;color:var(--white);
+}
+.note-content{
+  position:relative;z-index:5;
+  width:min(760px,calc(100vw - 125px));
+  margin:25px 0 100px 24px;
+  padding:18px 22px 26px;
+  background:rgba(0,0,0,.70);
+  color:#eee;
+  font:700 15px/1.52 Georgia,"Times New Roman",serif;
+}
+.note-content h1,.note-content h2,.note-content h3{
+  font-family:Georgia,"Times New Roman",serif;line-height:1.12
+}
+.note-content h1{font-size:27px}
+.note-content h2{font-size:22px;margin-top:26px}
+.note-content h3{font-size:18px}
+.note-content p,.note-content li{font-size:15px;line-height:1.52}
+.note-content blockquote{
+  border-left:2px solid rgba(255,255,255,.6);
+  margin:16px 0;padding:2px 13px;
+}
+.note-content hr{border:0;border-top:1px solid rgba(255,255,255,.45);margin:24px 0}
+
+/* Mobile */
 @media(max-width:800px){
-  .home-overlay{
-    width:calc(100vw - 76px);
-    padding:28px 20px 70px;
+  .rail{width:70px}
+  .star{font-size:32px}
+  .rail nav{top:205px}
+  .rail nav a{font-size:12px;padding-left:7px}
+  .rail nav a.active:after{width:50px}
+
+  .home,.notes-list,.note-page{margin-left:70px}
+  .home-header,.note-header{padding-left:16px;padding-right:14px;min-height:165px}
+  .home-header h1{font-size:40px}
+  .home .intro{
+    position:relative;right:auto;top:auto;
+    width:80%;margin:-1px 0 0 16px;
+    padding:10px 12px;background:var(--panel)
   }
-  .home-heading h1{font-size:42px}
-  .home-description{margin-top:22px}
-}
-
-
-/* --- Revised scrolling and editorial positioning --- */
-.note-page{overflow:visible}
-.note-hero{position:relative;transform:none}
-.note-hero img{position:absolute;inset:0;display:block}
-.content{position:relative}
-.home-main{overflow:visible}
-/* The homepage background/photo scrolls with the page rather than staying fixed. */
-.home-photo,.home-shade{position:absolute}
-.home-photo img{height:100%;min-height:100vh}
-@media(max-width:800px){
-  .intro-copy{padding:18vh 28px 10vh;align-self:end}
+  .little-poster{left:78px;bottom:24px;width:92px;max-height:145px}
+  .notes-list .notes-list-label,
+  .notes-list .notes{
+    width:calc(100% - 28px);max-width:none;margin-left:14px
+  }
+  .note-row{grid-template-columns:30px minmax(0,1fr) 28px;min-height:65px}
+  .note-title{font-size:12px}
+  .note-content{
+    width:calc(100% - 28px);margin-left:14px;padding:15px 16px;
+  }
 }
