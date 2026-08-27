@@ -8,9 +8,8 @@
 </head>
 <body class="note-body">
 <main class="note-page">
-  <div class="note-background"><img src="note-4.jpg" alt=""></div>
+  <div class="note-background" id="parallax-bg"><img src="note-4.jpg" alt=""></div>
   <div class="note-darkness"></div>
-
   <header class="note-header">
     <div class="kicker">Конспекты</div>
     <div class="line"></div>
@@ -19,11 +18,8 @@
       <h1>ЛЕНИН, РЕВОЛЮЦИЯ, ГОСУДАРСТВО И ЭКОНОМИКА</h1>
     </div>
   </header>
-
   <a class="back" href="notes.html">←</a>
-
-  <article class="note-content">
-    <h2>Ленин, революция, государство, экономика и проблема превращения теории в реальность</h2>
+  <article class="note-content"><h2>Ленин, революция, государство, экономика и проблема превращения теории в реальность</h2>
 <p>Теперь главный вопрос меняется:</p>
 <blockquote>
 <p><strong>Если Маркс описал механизм капитализма и предполагаемый переход к коммунизму, что произошло после него?</strong></p>
@@ -1414,8 +1410,22 @@
 <p><strong>для распределения по потребностям необходимо изобилие; для изобилия нужна высокая производительность; для высокой производительности нужна эффективная организация производства; но чрезмерная централизация этой организации может сама снижать экономическую эффективность.</strong></p>
 </blockquote>
 <p>Поэтому <strong>коммунистический проект сталкивается одновременно с двумя фундаментальными проблемами: политической — «как не превратить переходную власть в постоянную власть?» — и экономической — «как создать достаточно эффективное производство без возвращения к рыночной конкуренции или чрезмерной бюрократической централизации?»</strong></p>
-<p>И именно <strong>на пересечении этих двух проблем — власти и экономической эффективности — находится большая часть спора о том, почему СССР не дошёл до коммунизма</strong>.</p>
-  </article>
+<p>И именно <strong>на пересечении этих двух проблем — власти и экономической эффективности — находится большая часть спора о том, почему СССР не дошёл до коммунизма</strong>.</p></article>
 </main>
+<script>
+(function(){
+  const bg=document.getElementById('parallax-bg');
+  let ticking=false;
+  function update(){
+    const y=Math.min(window.scrollY*0.075,180);
+    bg.style.transform='translate3d(0,'+y+'px,0)';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){requestAnimationFrame(update);ticking=true;}
+  },{passive:true});
+  update();
+})();
+</script>
 </body>
 </html>

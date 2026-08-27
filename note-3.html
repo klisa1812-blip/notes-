@@ -8,9 +8,8 @@
 </head>
 <body class="note-body">
 <main class="note-page">
-  <div class="note-background"><img src="note-3.jpg" alt=""></div>
+  <div class="note-background" id="parallax-bg"><img src="note-3.jpg" alt=""></div>
   <div class="note-darkness"></div>
-
   <header class="note-header">
     <div class="kicker">Конспекты</div>
     <div class="line"></div>
@@ -19,11 +18,8 @@
       <h1>ОТ РАННЕГО МАРКСА К «КАПИТАЛУ»</h1>
     </div>
   </header>
-
   <a class="back" href="notes.html">←</a>
-
-  <article class="note-content">
-    <h1>От раннего Маркса к «Капиталу»: философия, экономика и теория коммунизма</h1>
+  <article class="note-content"><h1>От раннего Маркса к «Капиталу»: философия, экономика и теория коммунизма</h1>
 <p>Этот конспект нужно понимать как <strong>переход от философского Маркса к экономическому Марксу</strong>. Главная задача — не просто выучить термины «стоимость», «прибавочная стоимость», «класс», «капитал», а увидеть, <strong>как одно понятие логически приводит к другому</strong>.</p>
 <p>Общая линия:</p>
 <p><strong>человек → труд → отчуждение → разделение труда → собственность → классы → капитал → рабочая сила → прибавочная стоимость → накопление → развитие производства → противоречия капитализма → классовая борьба → социализм → коммунизм.</strong></p>
@@ -1392,8 +1388,22 @@
 <blockquote>
 <p><strong>если коммунизм требует изобилия и высокой производительности, какая экономическая система способна обеспечить это изобилие, сохраняя одновременно общественный контроль над производством и достаточные стимулы для эффективности и инноваций?</strong></p>
 </blockquote>
-<p>Именно <strong>эти два вопроса — власть и экономическая эффективность — связывают философию Маркса непосредственно с историей Ленина и СССР.</strong></p>
-  </article>
+<p>Именно <strong>эти два вопроса — власть и экономическая эффективность — связывают философию Маркса непосредственно с историей Ленина и СССР.</strong></p></article>
 </main>
+<script>
+(function(){
+  const bg=document.getElementById('parallax-bg');
+  let ticking=false;
+  function update(){
+    const y=Math.min(window.scrollY*0.075,180);
+    bg.style.transform='translate3d(0,'+y+'px,0)';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){requestAnimationFrame(update);ticking=true;}
+  },{passive:true});
+  update();
+})();
+</script>
 </body>
 </html>

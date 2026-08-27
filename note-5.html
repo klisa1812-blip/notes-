@@ -8,9 +8,8 @@
 </head>
 <body class="note-body">
 <main class="note-page">
-  <div class="note-background"><img src="note-5.jpg" alt=""></div>
+  <div class="note-background" id="parallax-bg"><img src="note-5.jpg" alt=""></div>
   <div class="note-darkness"></div>
-
   <header class="note-header">
     <div class="kicker">Конспекты</div>
     <div class="line"></div>
@@ -19,11 +18,8 @@
       <h1>ПЕРЕСТРОЙКА И ПОСТСОВЕТСКИЙ ЧЕЛОВЕК</h1>
     </div>
   </header>
-
   <a class="back" href="notes.html">←</a>
-
-  <article class="note-content">
-    <p><strong>слом экономической системы → кризис государства → изменение массового сознания → столкновение старого и нового представления о человеке и обществе.</strong></p>
+  <article class="note-content"><p><strong>слом экономической системы → кризис государства → изменение массового сознания → столкновение старого и нового представления о человеке и обществе.</strong></p>
 <p>И тогда перестройка становится гораздо более трагичной. Она происходит не в пустоте: люди входят в неё уже сформированными предыдущими десятилетиями. У них есть память о войне, дефиците, стабильности, страхе, коллективизме, государстве, труде, социальной защищённости. Поэтому человек одновременно <strong>хочет свободы и боится её последствий</strong>.</p>
 <hr>
 <h2>1. Перестройка возникает не на пустом месте</h2>
@@ -885,8 +881,22 @@
 <p>— остаётся старым идеалом равенства, коллективности и освобождения от эксплуатации.</p>
 <p><strong>КОНФЛИКТ</strong></p>
 <p>— возникает потому, что человек одновременно хочет <strong>свободы, безопасности, равенства, принадлежности и смысла</strong>, а историческая реальность не может дать ему всё это сразу.</p>
-<p>И поэтому <strong>перестройка — это не просто переход от коммунизма к капитализму. Это кризис человека, который потерял старый мир раньше, чем обрёл новый.</strong></p>
-  </article>
+<p>И поэтому <strong>перестройка — это не просто переход от коммунизма к капитализму. Это кризис человека, который потерял старый мир раньше, чем обрёл новый.</strong></p></article>
 </main>
+<script>
+(function(){
+  const bg=document.getElementById('parallax-bg');
+  let ticking=false;
+  function update(){
+    const y=Math.min(window.scrollY*0.075,180);
+    bg.style.transform='translate3d(0,'+y+'px,0)';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){requestAnimationFrame(update);ticking=true;}
+  },{passive:true});
+  update();
+})();
+</script>
 </body>
 </html>
