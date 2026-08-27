@@ -259,3 +259,78 @@ a{color:inherit;text-decoration:none}
  .site-shell .sidebar{width:70px}.site-shell .sidebar nav{margin-top:62px}.brand{font-size:8px}.sidebar-bottom{font-size:7px}
  .note-page{margin-left:70px}.note-page:before,.note-page:after{left:70px}.note-hero{height:38vh;min-height:230px}.hero-title{left:16px;right:14px;bottom:18px}.hero-title h1{font-size:30px}.content{width:calc(100% - 28px);margin-left:14px;padding:18px 16px 30px}.content p,.content li{font-size:14px}.content h1{font-size:23px}.content h2{font-size:19px}.content h3{font-size:17px}.site-shell footer{margin-left:14px}
 }
+
+
+/* NOTE FEED LOOK — matches the reference: photo first, then a compact note header and text over the background */
+.note-page{
+  margin-left:0;
+  min-height:100vh;
+  background:#080808 var(--note-bg) center/cover fixed no-repeat;
+}
+.note-page:before{inset:0;background:rgba(0,0,0,.48)}
+.note-page:after{inset:0;background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.62) 55%,rgba(0,0,0,.86) 100%)}
+.note-page .sidebar{display:none}
+.note-hero{
+  height:35vh;
+  min-height:245px;
+  max-height:none;
+  border-bottom:0;
+}
+.note-hero img{
+  filter:grayscale(100%) contrast(1.08) brightness(.72);
+}
+.note-hero .hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.18) 75%,rgba(0,0,0,.38))}
+.note-hero .hero-title{display:none}
+.feed-note-head{
+  position:relative;z-index:3;
+  width:min(800px,calc(100% - 64px));
+  margin-left:32px;
+  padding-top:3px;
+}
+.feed-kicker{
+  color:var(--white);
+  font:700 12px/1 Georgia,"Times New Roman",serif;
+}
+.feed-rule{height:1px;background:rgba(255,255,255,.48);margin:7px 0 4px}
+.feed-row{
+  display:grid;
+  grid-template-columns:24px minmax(0,1fr) 26px;
+  gap:0;
+  align-items:start;
+  min-height:54px;
+}
+.feed-number{color:var(--red);font:400 20px/1 Georgia,serif;padding-top:2px}
+.feed-title{color:var(--white);font:700 13px/1.05 Georgia,"Times New Roman",serif;text-transform:uppercase}
+.feed-arrow{color:var(--white);font:22px/1 Georgia,serif;text-align:right}
+.content{
+  width:min(800px,calc(100% - 64px));
+  margin:0 0 80px 32px;
+  padding:10px 10px 38px;
+  background:transparent;
+  border-left:0;
+  color:#eee;
+  font:700 14px/1.48 Georgia,"Times New Roman",serif;
+}
+.content h1,.content h2,.content h3{line-height:1.12}
+.content h1{font-size:19px;margin:18px 0 10px}.content h1:first-child{margin-top:0}
+.content h2{font-size:15px;margin:16px 0 8px}.content h3{font-size:15px;margin:14px 0 8px}
+.content p,.content li{font-size:14px;line-height:1.48}
+.content ul{padding-left:20px}
+.content blockquote{border-left:2px solid rgba(255,255,255,.62);margin:14px 0;padding:2px 12px}
+.content hr{border:0;border-top:1px solid rgba(255,255,255,.38);margin:20px 0}
+.site-shell footer{margin-left:32px}
+@media(max-width:800px){
+ .note-page{margin-left:0}.note-page:before,.note-page:after{left:0}
+ .note-hero{height:34vh;min-height:220px}
+ .feed-note-head{width:calc(100% - 32px);margin-left:16px}
+ .feed-title{font-size:12px}.feed-row{grid-template-columns:22px minmax(0,1fr) 22px}
+ .content{width:calc(100% - 32px);margin-left:16px;padding:8px 0 28px}
+ .content p,.content li{font-size:13px}.content h1{font-size:18px}.content h2{font-size:15px}.content h3{font-size:14px}
+ .site-shell footer{margin-left:16px}
+}
+
+.feed-back{
+  position:absolute;z-index:4;left:7px;top:calc(35vh + 66px);
+  font:24px/1 Georgia,"Times New Roman",serif;color:var(--white);
+}
+@media(max-width:800px){.feed-back{top:calc(34vh + 62px);left:5px;font-size:21px}}
