@@ -82,9 +82,11 @@ a{color:inherit;text-decoration:none}
 }
 .home .intro{
   position:absolute;z-index:5;right:5.2%;top:25px;
-  width:315px;
-  font:700 13px/1.35 Georgia,"Times New Roman",serif;
+  width:min(430px,38vw);
+  font:700 clamp(17px,1.7vw,24px)/1.15 Georgia,"Times New Roman",serif;
+  text-transform:uppercase;
 }
+.home .intro span{display:block;margin-top:16px;font-size:.65em;letter-spacing:.04em;text-transform:none;color:var(--red)}
 .home .notes{display:none}
 .little-poster{
   position:absolute;z-index:5;
@@ -202,7 +204,8 @@ a{color:inherit;text-decoration:none}
   .home .intro{
     position:relative;right:auto;top:auto;
     width:80%;margin:-1px 0 0 16px;
-    padding:10px 12px;background:var(--panel)
+    padding:10px 12px;background:var(--panel);
+    font-size:18px
   }
   .little-poster{left:78px;bottom:24px;width:92px;max-height:145px}
   .notes-list .notes-list-label,
@@ -299,8 +302,8 @@ a{color:inherit;text-decoration:none}
   align-items:start;
   min-height:54px;
 }
-.feed-number{color:var(--red);font:400 20px/1 Georgia,serif;padding-top:2px}
-.feed-title{color:var(--white);font:700 13px/1.05 Georgia,"Times New Roman",serif;text-transform:uppercase}
+.feed-number{color:var(--red);font:400 clamp(30px,3vw,42px)/.9 Georgia,serif;padding-top:0}
+.feed-title{color:var(--red);font:700 clamp(15px,1.35vw,20px)/1.02 Georgia,"Times New Roman",serif;text-transform:uppercase}
 .feed-arrow{color:var(--white);font:22px/1 Georgia,serif;text-align:right}
 .content{
   width:min(800px,calc(100% - 64px));
@@ -556,8 +559,9 @@ a{color:inherit;text-decoration:none}
   align-items:center;
   gap:18px;
 }
-.site-shell .feed-number{color:var(--red);font:400 25px/1 Georgia,serif}
+.site-shell .feed-number{color:var(--red);font:400 clamp(38px,4.2vw,58px)/.86 Georgia,serif}
 .site-shell .feed-title{
+  color:var(--red);
   font:700 clamp(25px,3.1vw,43px)/.88 Georgia,"Times New Roman",serif;
   letter-spacing:-.5px;
   text-transform:uppercase;
@@ -599,7 +603,7 @@ a{color:inherit;text-decoration:none}
  .site-shell .feed-kicker{font-size:13px;margin-bottom:10px}
  .site-shell .feed-rule{margin-bottom:9px}
  .site-shell .feed-row{grid-template-columns:30px minmax(0,1fr) 42px;gap:9px}
- .site-shell .feed-number{font-size:20px}
+ .site-shell .feed-number{font-size:38px}
  .site-shell .feed-title{font-size:24px}
  .site-shell .feed-arrow{font-size:27px}
  .site-shell .feed-back{margin-left:20px;width:40px;font-size:30px}
